@@ -11,6 +11,7 @@ struct StudyQuizView: View {
     @State private var startDate = Date()
     @State private var selectedAnswer : String = ""
     @State private var shuffledAnswers : [String] = []
+    @State private var didSubmitAnswer = false
     
     var body: some View {
         VStack {
@@ -22,23 +23,29 @@ struct StudyQuizView: View {
                 List {
                     ForEach(shuffledAnswers, id: \.self) { distractor in
                         AnswerCell(answer: distractor,
+                                   isCorrectAnswer: distractor == studyItem.answer,
                                    isSelected: distractor == selectedAnswer,
+                                   didSubmitAnswer: didSubmitAnswer,
                                    onPressed: onAnswerPressed)
                     }
                 }
             }
             Spacer()
-            Button("Submit") {
-                let now = Date()
-                let studyTime = now.timeIntervalSince(startDate) * 1000
-                let quizResult: QuizResult = (selectedAnswer == studyItem.answer) ? .Correct : .Incorrect
-                MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
-                                                    quizResult: quizResult,
-                                                    studyTimeMillis: studyTime) {
+            Button(didSubmitAnswer ? "Continue" : "Submit") {
+                if (didSubmitAnswer) {
                     onCompletion()
-                } onError: { errorMessage in
-                    alertMessage = errorMessage
-                    showingAlert = true
+                } else {
+                    let now = Date()
+                    let studyTime = now.timeIntervalSince(startDate) * 1000
+                    let quizResult: QuizResult = (selectedAnswer == studyItem.answer) ? .Correct : .Incorrect
+                    MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
+                                                        quizResult: quizResult,
+                                                        studyTimeMillis: studyTime) {
+                        didSubmitAnswer = true
+                    } onError: { errorMessage in
+                        alertMessage = errorMessage
+                        showingAlert = true
+                    }
                 }
             }.font(.system(size: 20))
                 .padding()

@@ -4,17 +4,21 @@ import SwiftUI
 struct AnswerCell: View {
     
     var answer : String
+    var isCorrectAnswer = false
     var isSelected = false
+    var didSubmitAnswer = false
     var onPressed : (String) -> ()
     
     var body: some View {
         Button(action: {
-            onPressed(answer)
+            if (!didSubmitAnswer) {
+                onPressed(answer)
+            }
         }) {
             HStack {
                 Text(answer)
                     .font(.system(size: 16))
-                    .foregroundColor(isSelected ? .white : .black)
+                    .foregroundColor(getTextColor())
             }
         }
         .frame(minWidth: 300,
@@ -22,8 +26,27 @@ struct AnswerCell: View {
                maxWidth: .infinity,
                alignment: .leading)
         .padding()
-        .background(isSelected ? .blue : .clear)
+        .background(getBackgroundColor())
         .cornerRadius(5)
+    }
+    
+    func getTextColor() -> Color {
+        let backgroundColor = getBackgroundColor()
+        return backgroundColor == .clear ? .black : .white
+    }
+    
+    func getBackgroundColor() -> Color {
+        if (didSubmitAnswer && isSelected && isCorrectAnswer) {
+            return .green
+        } else if (didSubmitAnswer && isSelected) {
+            return .red
+        } else if (didSubmitAnswer && isCorrectAnswer) {
+            return .green
+        } else if (isSelected) {
+            return .blue
+        } else {
+            return .clear
+        }
     }
 }
 
@@ -31,7 +54,9 @@ struct AnswerCell_Previews: PreviewProvider {
     
     static var previews: some View {
         AnswerCell(answer: "Test",
-                   isSelected: true) { answer in
+                   isCorrectAnswer: true,
+                   isSelected: true,
+                   didSubmitAnswer: true) { answer in
             //
         }
     }
