@@ -24,6 +24,8 @@
 		4CBDCA25292C2F6D0013B64D /* StatsBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA24292C2F6D0013B64D /* StatsBarButton.swift */; };
 		4CBDCA27292C36C60013B64D /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA26292C36C60013B64D /* AnswerCell.swift */; };
 		4CBDCA2A292D2FB80013B64D /* Double+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA29292D2FB70013B64D /* Double+Custom.swift */; };
+		4CBDCA2C292D8CE60013B64D /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA2B292D8CE60013B64D /* Color+Custom.swift */; };
+		4CBDCA2E292D94A80013B64D /* ChartGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA2D292D94A80013B64D /* ChartGroupBoxStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		4CBDCA24292C2F6D0013B64D /* StatsBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarButton.swift; sourceTree = "<group>"; };
 		4CBDCA26292C36C60013B64D /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		4CBDCA29292D2FB70013B64D /* Double+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Custom.swift"; sourceTree = "<group>"; };
+		4CBDCA2B292D8CE60013B64D /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
+		4CBDCA2D292D94A80013B64D /* ChartGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartGroupBoxStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,14 +114,14 @@
 			isa = PBXGroup;
 			children = (
 				4C9FB69F2927F0FA00D88AF0 /* AddStudyItemView.swift */,
+				4CBDCA26292C36C60013B64D /* AnswerCell.swift */,
 				4C9FB6872926A8E900D88AF0 /* EnterAPIKeyView.swift */,
-				4CBDCA1D292C144A0013B64D /* LearningStatsChart.swift */,
 				4CBDCA22292C2D6A0013B64D /* LearningStatsView.swift */,
 				4CBDCA24292C2F6D0013B64D /* StatsBarButton.swift */,
 				4CBDCA1B292C01000013B64D /* StudyItemCell.swift */,
 				4C9FB69A2926F6C300D88AF0 /* StudyItemsView.swift */,
 				4C9FB6A229283F8D00D88AF0 /* StudyQuizView.swift */,
-				4CBDCA26292C36C60013B64D /* AnswerCell.swift */,
+				4CBDCA2F292D94B10013B64D /* chart */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -134,8 +138,18 @@
 			isa = PBXGroup;
 			children = (
 				4CBDCA29292D2FB70013B64D /* Double+Custom.swift */,
+				4CBDCA2B292D8CE60013B64D /* Color+Custom.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		4CBDCA2F292D94B10013B64D /* chart */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDCA2D292D94A80013B64D /* ChartGroupBoxStyle.swift */,
+				4CBDCA1D292C144A0013B64D /* LearningStatsChart.swift */,
+			);
+			path = chart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +224,10 @@
 			files = (
 				4CBDCA23292C2D6A0013B64D /* LearningStatsView.swift in Sources */,
 				4C9FB69E2927EBD600D88AF0 /* StudyItem.swift in Sources */,
+				4CBDCA2C292D8CE60013B64D /* Color+Custom.swift in Sources */,
 				4C9FB6962926C25800D88AF0 /* MyUserDefaults.swift in Sources */,
 				4C9FB6A52928495F00D88AF0 /* QuizResult.swift in Sources */,
+				4CBDCA2E292D94A80013B64D /* ChartGroupBoxStyle.swift in Sources */,
 				4C9FB6942926BFC600D88AF0 /* MemreLearningEngine.swift in Sources */,
 				4C9FB6A329283F8D00D88AF0 /* StudyQuizView.swift in Sources */,
 				4CBDCA2A292D2FB80013B64D /* Double+Custom.swift in Sources */,

@@ -10,8 +10,11 @@ struct LearningStatsView: View {
         VStack {
             Spacer()
             LearningStatsChart()
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
             Spacer()
         }.navigationTitle("Learning Stats")
+            .background(Color.memreLightGrey)
     }
 }
 

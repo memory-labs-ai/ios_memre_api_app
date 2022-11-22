@@ -12,8 +12,8 @@ struct StatsBarButton: View {
                 showLearningStatsView = true
             }) {
                 Text("Stats")
-                    .font(.system(size: 16))
-                    .foregroundColor(.black)
+                    .font(.system(size: 18))
+                    .foregroundColor(.memreRed)
             }
         }
     }

@@ -28,7 +28,7 @@ struct StudyQuizView: View {
                                    didSubmitAnswer: didSubmitAnswer,
                                    onPressed: onAnswerPressed)
                     }
-                }
+                }.scrollContentBackground(.hidden)
             }
             Spacer()
             Button(didSubmitAnswer ? "Done" : "Submit") {
@@ -49,10 +49,11 @@ struct StudyQuizView: View {
                 }
             }.font(.system(size: 20))
                 .padding()
-                .background(Color.blue)
+                .background(Color.memreRed)
                 .foregroundColor(.white)
                 .cornerRadius(5)
         }
+        .background(Color.memreLightGrey)
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Oops"),
                   message: Text(alertMessage),

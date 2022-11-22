@@ -13,6 +13,7 @@ struct StudyItemsView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
+            Color.memreLightGrey.ignoresSafeArea()
             List() {
                 ForEach(studyItems, id: \.id) { studyItem in
                     StudyItemCell(studyItem: studyItem,
@@ -21,7 +22,7 @@ struct StudyItemsView: View {
                 .onDelete(perform: deleteStudyItem)
             }.refreshable {
                 reloadAll()
-            }
+            }.scrollContentBackground(.hidden)
             Button(action: {
                 showAddStudyItemView = true
             }) {
@@ -29,7 +30,7 @@ struct StudyItemsView: View {
                     .scaledToFill()
                     .foregroundColor(.white)
                     .frame(width: 60, height: 60)
-                    .background(Color.blue)
+                    .background(Color.memreRed)
                     .clipShape(Circle())
                     .padding(.trailing, 30)
             }
@@ -37,7 +38,7 @@ struct StudyItemsView: View {
         .overlay {
             if showAddStudyItemView {
                 ZStack {
-                    Color(white: 0, opacity: 0.75)
+                    Color(white: 0, opacity: 0.75).ignoresSafeArea()
                     AddStudyItemView() {
                         showAddStudyItemView = false
                         reloadStudyItems()
@@ -50,7 +51,7 @@ struct StudyItemsView: View {
         .overlay {
             if loading {
                 ZStack {
-                    Color(white: 0, opacity: 0.75)
+                    Color(white: 0, opacity: 0.75).ignoresSafeArea()
                     ProgressView().tint(.white)
                 }
             }

@@ -34,7 +34,7 @@ struct EnterAPIKeyView: View {
                         })
                     }.font(.system(size: 20))
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.memreRed)
                         .foregroundColor(.white)
                         .cornerRadius(5)
                     .alert(isPresented: $showingAlert) {
@@ -47,7 +47,7 @@ struct EnterAPIKeyView: View {
                             isShowingStudyItemsView = true
                         }.font(.system(size: 20))
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.memreRed)
                             .foregroundColor(.white)
                             .cornerRadius(5)
                     }
@@ -61,8 +61,10 @@ struct EnterAPIKeyView: View {
                      }
             }
             .padding()
-            .navigationBarTitle("Memre Learning Engine", displayMode: .inline)
+            .navigationBarTitle("Memre Learning Engine", displayMode: .inline).foregroundColor(Color.memreRed)
+            .background(Color.memreLightGrey)
         }
+        .accentColor(Color.memreRed)
         .onAppear {
             if let currentKey = MyUserDefaults.getApiKey() {
                 apiKeyTextEntry = currentKey

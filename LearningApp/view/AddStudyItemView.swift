@@ -31,7 +31,7 @@ struct AddStudyItemView: View {
                     onCancel()
                 }.font(.system(size: 20))
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.memreRed)
                     .foregroundColor(.white)
                     .cornerRadius(5)
                 Button("Create Study Item") {
@@ -49,7 +49,7 @@ struct AddStudyItemView: View {
                     })
                 }.font(.system(size: 20))
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.memreRed)
                     .foregroundColor(.white)
                     .cornerRadius(5)
                 .alert(isPresented: $showingAlert) {
