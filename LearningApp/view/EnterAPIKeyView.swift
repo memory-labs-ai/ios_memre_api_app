@@ -11,9 +11,9 @@ struct EnterAPIKeyView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
+                Image("Memre-Icon")
+                    .resizable(resizingMode: .stretch)
+                    .frame(width: 100, height: 100)
                 Spacer()
                 TextField(LocalizedStringKey("Enter your RapidAPI key"),
                           text: $apiKeyTextEntry).textFieldStyle(RoundedBorderTextFieldStyle())
