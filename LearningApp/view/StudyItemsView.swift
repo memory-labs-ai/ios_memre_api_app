@@ -13,54 +13,51 @@ struct StudyItemsView: View {
     @State private var alertMessage : String = ""
     
     var body: some View {
-        
-        NavigationView {
-            ZStack(alignment: .bottomTrailing) {
-                List() {
-                    ForEach(studyItems, id: \.id) { studyItem in
-                        StudyItemCell(studyItem: studyItem,
-                                      isRecommended: isRecommended(studyItem))
-                    }
-                    .onDelete(perform: deleteStudyItem)
-                }.refreshable {
-                    reloadAll()
+        ZStack(alignment: .bottomTrailing) {
+            List() {
+                ForEach(studyItems, id: \.id) { studyItem in
+                    StudyItemCell(studyItem: studyItem,
+                                  isRecommended: isRecommended(studyItem))
                 }
-                Button(action: {
-                    showAddStudyItemView = true
-                }) {
-                    Image(systemName: "plus")
-                        .scaledToFill()
-                        .foregroundColor(.white)
-                        .frame(width: 60, height: 60)
-                        .background(Color.blue)
-                        .clipShape(Circle())
-                        .padding(.trailing, 30)
-                }
+                .onDelete(perform: deleteStudyItem)
+            }.refreshable {
+                reloadAll()
             }
-            .overlay {
-                if showAddStudyItemView {
-                    ZStack {
-                        Color(white: 0, opacity: 0.75)
-                        AddStudyItemView() {
-                            showAddStudyItemView = false
-                            reloadStudyItems()
-                        } onCancel: {
-                            showAddStudyItemView = false
-                        }
-                    }
-                }
+            Button(action: {
+                showAddStudyItemView = true
+            }) {
+                Image(systemName: "plus")
+                    .scaledToFill()
+                    .foregroundColor(.white)
+                    .frame(width: 60, height: 60)
+                    .background(Color.blue)
+                    .clipShape(Circle())
+                    .padding(.trailing, 30)
             }
-            .overlay {
-                if loading {
-                    ZStack {
-                        Color(white: 0, opacity: 0.75)
-                        ProgressView().tint(.white)
-                    }
-                }
-            }
-            .navigationTitle("Study Items")
-            .navigationBarItems(trailing: StatsBarButton())
         }
+        .overlay {
+            if showAddStudyItemView {
+                ZStack {
+                    Color(white: 0, opacity: 0.75)
+                    AddStudyItemView() {
+                        showAddStudyItemView = false
+                        reloadStudyItems()
+                    } onCancel: {
+                        showAddStudyItemView = false
+                    }
+                }
+            }
+        }
+        .overlay {
+            if loading {
+                ZStack {
+                    Color(white: 0, opacity: 0.75)
+                    ProgressView().tint(.white)
+                }
+            }
+        }
+        .navigationTitle("Study Items")
+        .navigationBarItems(trailing: StatsBarButton())
         .onAppear {
             reloadAll()
         }
