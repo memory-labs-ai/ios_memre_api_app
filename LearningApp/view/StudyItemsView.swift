@@ -68,7 +68,7 @@ struct StudyItemsView: View {
     }
     
     private func isRecommended(_ studyItem: StudyItem) -> Bool {
-        return self.recommendedStudyItemIds.contains(studyItem.id)
+        return self.recommendedStudyItemIds.contains(studyItem.learningEngineId)
     }
     
     private func reloadAll() {

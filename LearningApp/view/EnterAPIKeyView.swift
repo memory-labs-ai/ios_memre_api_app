@@ -22,24 +22,35 @@ struct EnterAPIKeyView: View {
                                isActive: $isShowingStudyItemsView) {
                     EmptyView()
                 }
-                Button("Create new user") {
-                    MemreLearningEngine.createUser(apiKeyTextEntry,
-                                                   onCompletion: {
-                        isShowingStudyItemsView = true
-                    },
-                                                   onError: { errorMessage in
-                        alertMessage = errorMessage
-                        showingAlert = true
-                    })
-                }.font(.system(size: 20))
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(5)
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Oops"),
-                          message: Text(alertMessage),
-                          dismissButton: .cancel(Text("OK")))
+                VStack {
+                    Button("Create new user") {
+                        MemreLearningEngine.createUser(apiKeyTextEntry,
+                                                       onCompletion: {
+                            isShowingStudyItemsView = true
+                        },
+                                                       onError: { errorMessage in
+                            alertMessage = errorMessage
+                            showingAlert = true
+                        })
+                    }.font(.system(size: 20))
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(5)
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Oops"),
+                              message: Text(alertMessage),
+                              dismissButton: .cancel(Text("OK")))
+                    }
+                    if (MyUserDefaults.hasPreviousApiKeyAndUser()) {
+                        Button("Use last user") {
+                            isShowingStudyItemsView = true
+                        }.font(.system(size: 20))
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                    }
                 }
                 Spacer()
                 Link (destination: URL(string: "https://rapidapi.com/memre-memre-default/api/learning-engine/")!) {
