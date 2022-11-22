@@ -18,7 +18,7 @@ struct StudyQuizView: View {
                     .padding(.horizontal, 10)
                     .padding(.bottom, 10)
                 List {
-                    ForEach(studyItem.distractors, id: \.self) { distractor in
+                    ForEach(studyItem.getShuffledAnswers(), id: \.self) { distractor in
                         AnswerCell(answer: distractor)
                     }
                 }

@@ -36,6 +36,13 @@ class StudyItem: NSObject {
                  "distractors" : distractors as AnyObject]
      }
     
+    func getShuffledAnswers() -> [String] {
+        var results = distractors.shuffled()
+        let answerPosition = Int.random(in: 0..<(distractors.count + 1))
+        results.insert(answer, at: answerPosition)
+        return results
+    }
+    
     static func previewStudyItem() -> StudyItem {
         return StudyItem(id: "1",
                          learningEngineId: "1",
