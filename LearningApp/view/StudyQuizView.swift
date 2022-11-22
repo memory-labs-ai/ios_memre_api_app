@@ -9,6 +9,8 @@ struct StudyQuizView: View {
     @State private var showingAlert = false
     @State private var alertMessage : String = ""
     @State private var startDate = Date()
+    @State private var selectedAnswer : String = ""
+    @State private var shuffledAnswers : [String] = []
     
     var body: some View {
         VStack {
@@ -18,8 +20,10 @@ struct StudyQuizView: View {
                     .padding(.horizontal, 10)
                     .padding(.bottom, 10)
                 List {
-                    ForEach(studyItem.getShuffledAnswers(), id: \.self) { distractor in
-                        AnswerCell(answer: distractor)
+                    ForEach(shuffledAnswers, id: \.self) { distractor in
+                        AnswerCell(answer: distractor,
+                                   isSelected: distractor == selectedAnswer,
+                                   onPressed: onAnswerPressed)
                     }
                 }
             }
@@ -27,8 +31,9 @@ struct StudyQuizView: View {
             Button("Submit") {
                 let now = Date()
                 let studyTime = now.timeIntervalSince(startDate) * 1000
+                let quizResult: QuizResult = (selectedAnswer == studyItem.answer) ? .Correct : .Incorrect
                 MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
-                                                    quizResult: .Correct,
+                                                    quizResult: quizResult,
                                                     studyTimeMillis: studyTime) {
                     onCompletion()
                 } onError: { errorMessage in
@@ -49,6 +54,13 @@ struct StudyQuizView: View {
         .navigationTitle("Quiz").onAppear() {
             startDate = Date()
         }
+        .onAppear() {
+            shuffledAnswers = studyItem.getShuffledAnswers()
+        }
+    }
+    
+    func onAnswerPressed(answer: String) {
+        selectedAnswer = answer
     }
 }
 

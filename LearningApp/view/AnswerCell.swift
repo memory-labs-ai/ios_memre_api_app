@@ -4,24 +4,35 @@ import SwiftUI
 struct AnswerCell: View {
     
     var answer : String
-    @State private var isSelected = false
+    var isSelected = false
+    var onPressed : (String) -> ()
     
     var body: some View {
         Button(action: {
-            isSelected.toggle()
+            onPressed(answer)
         }) {
             HStack {
                 Text(answer)
                     .font(.system(size: 16))
-                    .foregroundColor(.black)
+                    .foregroundColor(isSelected ? .white : .black)
             }
         }
+        .frame(minWidth: 300,
+               idealWidth: .infinity,
+               maxWidth: .infinity,
+               alignment: .leading)
+        .padding()
+        .background(isSelected ? .blue : .clear)
+        .cornerRadius(5)
     }
 }
 
 struct AnswerCell_Previews: PreviewProvider {
     
     static var previews: some View {
-        AnswerCell(answer: "Test")
+        AnswerCell(answer: "Test",
+                   isSelected: true) { answer in
+            //
+        }
     }
 }
