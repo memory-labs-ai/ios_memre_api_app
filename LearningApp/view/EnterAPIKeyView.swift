@@ -8,6 +8,10 @@ struct EnterAPIKeyView: View {
     @State private var alertMessage : String = ""
     @State private var isShowingStudyItemsView = false
     
+    init() {
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.memreRed]
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
