@@ -8,9 +8,7 @@ struct StudyItemCell: View {
     @State private var showStudyQuizView = false
     
     var body: some View {
-        NavigationLink(destination: StudyQuizView(studyItem: studyItem) {
-           showStudyQuizView = false
-        },
+        NavigationLink(destination: StudyQuizView(studyItem: studyItem),
                        isActive: $showStudyQuizView) {
             Button(action: {
                 showStudyQuizView = true

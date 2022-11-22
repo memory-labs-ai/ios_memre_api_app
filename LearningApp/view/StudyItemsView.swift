@@ -8,7 +8,6 @@ struct StudyItemsView: View {
     @State private var loading = false
     @State private var showAddStudyItemView = false
     @State private var showLearningStatsView = false
-    @State private var showStudyQuizView = false
     @State private var showingAlert = false
     @State private var alertMessage : String = ""
     

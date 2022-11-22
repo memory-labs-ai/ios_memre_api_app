@@ -4,7 +4,7 @@ import SwiftUI
 struct StudyQuizView: View {
     
     var studyItem : StudyItem
-    var onCompletion : () -> ()
+    @Environment(\.dismiss) private var dismiss
     
     @State private var showingAlert = false
     @State private var alertMessage : String = ""
@@ -31,9 +31,9 @@ struct StudyQuizView: View {
                 }
             }
             Spacer()
-            Button(didSubmitAnswer ? "Continue" : "Submit") {
+            Button(didSubmitAnswer ? "Done" : "Submit") {
                 if (didSubmitAnswer) {
-                    onCompletion()
+                    dismiss()
                 } else {
                     let now = Date()
                     let studyTime = now.timeIntervalSince(startDate) * 1000
@@ -74,6 +74,6 @@ struct StudyQuizView: View {
 struct StudyQuizView_Previews: PreviewProvider {
     
     static var previews: some View {
-        StudyQuizView(studyItem: StudyItem.previewStudyItem()) {}
+        StudyQuizView(studyItem: StudyItem.previewStudyItem())
     }
 }
