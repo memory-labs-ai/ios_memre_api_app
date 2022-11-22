@@ -21,6 +21,16 @@ struct LearningStatsChart: View {
         .frame(height: 300)
         .chartXScale(domain: 0...xMax)
         .chartYScale(domain: 0...1)
+        .chartXAxisLabel(position: .bottom, alignment: .center) {
+            Text("Hours")
+                .font(.system(size: 16))
+                .foregroundColor(.black)
+        }
+        .chartYAxisLabel(position: .trailing, alignment: .center) {
+            Text("Predicted Effeciency")
+                .font(.system(size: 16))
+                .foregroundColor(.black)
+        }
         .padding()
         .onAppear() {
             reloadLearningStats()
