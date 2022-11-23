@@ -117,7 +117,6 @@
 		4C9FB69C2926F6CC00D88AF0 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				4C9FB69F2927F0FA00D88AF0 /* AddStudyItemView.swift */,
 				4CBDCA26292C36C60013B64D /* AnswerCell.swift */,
 				4CBDCA24292C2F6D0013B64D /* StatsBarButton.swift */,
 				4CBDCA1B292C01000013B64D /* StudyItemCell.swift */,
@@ -163,6 +162,7 @@
 		4CF8A484292E8C6C00B77837 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				4C9FB69F2927F0FA00D88AF0 /* AddStudyItemView.swift */,
 				4C9FB6872926A8E900D88AF0 /* EnterAPIKeyView.swift */,
 				4CBDCA22292C2D6A0013B64D /* LearningStatsView.swift */,
 				4C9FB69A2926F6C300D88AF0 /* StudyItemsView.swift */,

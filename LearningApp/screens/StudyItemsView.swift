@@ -13,6 +13,15 @@ struct StudyItemsView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
+            NavigationLink(destination: AddStudyItemView() {
+                showAddStudyItemView = false
+                reloadStudyItems()
+            } onCancel: {
+                showAddStudyItemView = false
+            },
+                           isActive: $showAddStudyItemView) {
+                EmptyView()
+            }
             Color.memreLightGrey.ignoresSafeArea()
             List() {
                 ForEach(studyItems, id: \.id) { studyItem in
@@ -33,19 +42,6 @@ struct StudyItemsView: View {
                     .background(Color.memreRed)
                     .clipShape(Circle())
                     .padding(.trailing, 30)
-            }
-        }
-        .overlay {
-            if showAddStudyItemView {
-                ZStack {
-                    Color(white: 0, opacity: 0.75).ignoresSafeArea()
-                    AddStudyItemView() {
-                        showAddStudyItemView = false
-                        reloadStudyItems()
-                    } onCancel: {
-                        showAddStudyItemView = false
-                    }
-                }
             }
         }
         .overlay {
