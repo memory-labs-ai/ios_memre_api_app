@@ -14,10 +14,7 @@ struct StudyItemsView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             NavigationLink(destination: AddStudyItemView() {
-                showAddStudyItemView = false
                 reloadStudyItems()
-            } onCancel: {
-                showAddStudyItemView = false
             },
                            isActive: $showAddStudyItemView) {
                 EmptyView()
@@ -55,6 +52,8 @@ struct StudyItemsView: View {
         .navigationTitle("Study Items")
         .navigationBarItems(trailing: StatsBarButton())
         .onAppear {
+            showLearningStatsView = false
+            showAddStudyItemView = false
             reloadAll()
         }
         .alert(isPresented: $showingAlert) {

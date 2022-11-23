@@ -4,7 +4,7 @@ import SwiftUI
 struct AddStudyItemView: View {
     
     var onCompletion : () -> ()
-    var onCancel : () -> ()
+    @Environment(\.dismiss) private var dismiss
     
     @State private var question : String = ""
     @State private var answer : String = ""
@@ -30,7 +30,7 @@ struct AddStudyItemView: View {
                 .padding(.bottom, 10)
             HStack {
                 Button("Cancel") {
-                    onCancel()
+                    dismiss()
                 }.font(.system(size: 20))
                     .padding()
                     .background(Color.memreRed)
@@ -77,6 +77,9 @@ struct AddStudyItemView: View {
                                                  answer: answer,
                                                   distractors: parseDistractors()))
             onCompletion()
+            DispatchQueue.main.async {
+                dismiss()
+            }
         },
                                             onError: { errorMessage in
             loading = false
@@ -89,6 +92,6 @@ struct AddStudyItemView: View {
 struct AddStudyItemView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AddStudyItemView {} onCancel: {}
+        AddStudyItemView {}
     }
 }
