@@ -15,7 +15,7 @@ struct EnterAPIKeyView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("Memre-Icon")
+                Image("MemreIcon")
                     .resizable(resizingMode: .stretch)
                     .frame(width: 100, height: 100)
                 Spacer()
