@@ -6,7 +6,7 @@ struct LearningApp: App {
     
     var body: some Scene {
         WindowGroup {
-            EnterAPIKeyView()
+            RootNavigation()
         }
     }
 }

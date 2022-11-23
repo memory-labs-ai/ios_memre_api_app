@@ -26,6 +26,7 @@
 		4CBDCA2A292D2FB80013B64D /* Double+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA29292D2FB70013B64D /* Double+Custom.swift */; };
 		4CBDCA2C292D8CE60013B64D /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA2B292D8CE60013B64D /* Color+Custom.swift */; };
 		4CBDCA2E292D94A80013B64D /* ChartGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA2D292D94A80013B64D /* ChartGroupBoxStyle.swift */; };
+		4CF8A483292E89DC00B77837 /* RootNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8A482292E89DC00B77837 /* RootNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		4CBDCA29292D2FB70013B64D /* Double+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Custom.swift"; sourceTree = "<group>"; };
 		4CBDCA2B292D8CE60013B64D /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
 		4CBDCA2D292D94A80013B64D /* ChartGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartGroupBoxStyle.swift; sourceTree = "<group>"; };
+		4CF8A482292E89DC00B77837 /* RootNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				4C9FB6A12927F10A00D88AF0 /* api */,
 				4CBDCA28292D2F9C0013B64D /* extensions */,
 				4C9FB6972926CBF900D88AF0 /* model */,
+				4CF8A481292E89C600B77837 /* navigation */,
 				4C9FB68B2926A8EB00D88AF0 /* Preview Content */,
 				4C9FB69C2926F6CC00D88AF0 /* view */,
 			);
@@ -150,6 +153,14 @@
 				4CBDCA1D292C144A0013B64D /* LearningStatsChart.swift */,
 			);
 			path = chart;
+			sourceTree = "<group>";
+		};
+		4CF8A481292E89C600B77837 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4CF8A482292E89DC00B77837 /* RootNavigation.swift */,
+			);
+			path = navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 				4CBDCA25292C2F6D0013B64D /* StatsBarButton.swift in Sources */,
 				4C9FB6A02927F0FA00D88AF0 /* AddStudyItemView.swift in Sources */,
 				4CBDCA1E292C144A0013B64D /* LearningStatsChart.swift in Sources */,
+				4CF8A483292E89DC00B77837 /* RootNavigation.swift in Sources */,
 				4C9FB69B2926F6C300D88AF0 /* StudyItemsView.swift in Sources */,
 				4CBDCA27292C36C60013B64D /* AnswerCell.swift in Sources */,
 				4CBDCA1C292C01000013B64D /* StudyItemCell.swift in Sources */,
