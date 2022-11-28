@@ -7,13 +7,14 @@ struct LearningStatsView: View {
     @State private var alertMessage : String = ""
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Spacer()
-                LearningStatsChart()
-                Spacer()
-            }.navigationTitle("Learning Stats")
-        }
+        VStack {
+            Spacer()
+            LearningStatsChart()
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
+            Spacer()
+        }.navigationTitle("Learning Stats")
+            .background(Color.memreLightGrey)
     }
 }
 

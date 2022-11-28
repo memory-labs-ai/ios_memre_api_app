@@ -34,6 +34,13 @@ class MyUserDefaults: NSObject {
         saveStudyItems(studyItems)
     }
     
+    class func hasPreviousApiKeyAndUser() -> Bool {
+        guard let userId = getUserId(), let apiKey = getApiKey() else {
+            return false
+        }
+        return userId != "" && apiKey != ""
+    }
+    
     class func saveStudyItems(_ studyItems: [StudyItem]) {
         let convertedItems = studyItems.map { $0.asDictionary()}
         if let data = try? JSONSerialization.data(withJSONObject: convertedItems, options: []) {
