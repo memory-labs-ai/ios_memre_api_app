@@ -26,6 +26,7 @@
 		4CBDCA2A292D2FB80013B64D /* Double+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA29292D2FB70013B64D /* Double+Custom.swift */; };
 		4CBDCA2C292D8CE60013B64D /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA2B292D8CE60013B64D /* Color+Custom.swift */; };
 		4CBDCA2E292D94A80013B64D /* ChartGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDCA2D292D94A80013B64D /* ChartGroupBoxStyle.swift */; };
+		4CE7199D2935214F00C60D79 /* LearningStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7199C2935214F00C60D79 /* LearningStat.swift */; };
 		4CF8A483292E89DC00B77837 /* RootNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8A482292E89DC00B77837 /* RootNavigation.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		4CBDCA29292D2FB70013B64D /* Double+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Custom.swift"; sourceTree = "<group>"; };
 		4CBDCA2B292D8CE60013B64D /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
 		4CBDCA2D292D94A80013B64D /* ChartGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartGroupBoxStyle.swift; sourceTree = "<group>"; };
+		4CE7199C2935214F00C60D79 /* LearningStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningStat.swift; sourceTree = "<group>"; };
 		4CF8A482292E89DC00B77837 /* RootNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +110,6 @@
 		4C9FB6972926CBF900D88AF0 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				4C9FB6A42928495F00D88AF0 /* QuizResult.swift */,
 				4C9FB69D2927EBD600D88AF0 /* StudyItem.swift */,
 			);
 			path = model;
@@ -129,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4C9FB6932926BFC600D88AF0 /* MemreLearningEngine.swift */,
+				4CE7199B2935211500C60D79 /* model */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -149,6 +151,15 @@
 				4CBDCA1D292C144A0013B64D /* LearningStatsChart.swift */,
 			);
 			path = chart;
+			sourceTree = "<group>";
+		};
+		4CE7199B2935211500C60D79 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4CE7199C2935214F00C60D79 /* LearningStat.swift */,
+				4C9FB6A42928495F00D88AF0 /* QuizResult.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		4CF8A481292E89C600B77837 /* navigation */ = {
@@ -258,6 +269,7 @@
 				4C9FB69B2926F6C300D88AF0 /* StudyItemsView.swift in Sources */,
 				4CBDCA27292C36C60013B64D /* AnswerCell.swift in Sources */,
 				4CBDCA1C292C01000013B64D /* StudyItemCell.swift in Sources */,
+				4CE7199D2935214F00C60D79 /* LearningStat.swift in Sources */,
 				4C9FB6862926A8E900D88AF0 /* LearningApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

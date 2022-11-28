@@ -4,7 +4,7 @@ import Charts
 
 struct LearningStatsChart: View {
     
-    @State private var learningStats: [String: Double] = [:]
+    @State private var learningStats: [LearningStat] = []
     @State private var showingAlert = false
     @State private var alertMessage : String = ""
     @State private var xMax : Int = 24
@@ -12,10 +12,10 @@ struct LearningStatsChart: View {
     var body: some View {
         GroupBox {
             Chart {
-                ForEach(learningStats.sorted(by: { (Int($0.key) ?? 0) < (Int($1.key) ?? 0) }), id: \.key) { key, value in
+                ForEach(learningStats.sorted(by: { $0.hoursFromNow < $1.hoursFromNow }), id: \.hoursFromNow) { learningStat in
                     LineMark(
-                        x: .value("Hour", Int(key) ?? 0),
-                        y: .value("Efficiency", value)
+                        x: .value("Hour", learningStat.hoursFromNow),
+                        y: .value("Efficiency", learningStat.effeciency)
                     )
                 }
             }

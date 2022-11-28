@@ -147,7 +147,7 @@ class MemreLearningEngine {
         task.resume()
     }
     
-    static func getLearningStats(onCompletion: @escaping (_ learningStats: [String: Double]) -> Void,
+    static func getLearningStats(onCompletion: @escaping (_ learningStats: [LearningStat]) -> Void,
                                  onError: @escaping (String) -> Void) {
         guard let apiKey = MyUserDefaults.getApiKey(), let userId = MyUserDefaults.getUserId() else {
             onError("Unepected missing api key")
@@ -171,7 +171,12 @@ class MemreLearningEngine {
                     onError("Unexpected response data")
                     return
                 }
-                onCompletion(learningStats)
+                var results: [LearningStat] = []
+                learningStats.forEach { (key: String, value: Double) in
+                    results.append(LearningStat(hoursFromNow: Int(key) ?? 0,
+                                                effeciency: value))
+                }
+                onCompletion(results)
             }
         })
         task.resume()
