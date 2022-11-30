@@ -72,9 +72,9 @@ struct AddStudyItemView: View {
         MemreLearningEngine.createLearningItem(onCompletion: { learningItemId in
             loading = false
             MyUserDefaults.addStudyItem(StudyItem(id: UUID().uuidString,
-                                                 learningEngineId: learningItemId,
-                                                 question: question,
-                                                 answer: answer,
+                                                  learningEngineId: learningItemId,
+                                                  question: question,
+                                                  answer: answer,
                                                   distractors: parseDistractors()))
             onCompletion()
             DispatchQueue.main.async {
