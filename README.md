@@ -12,6 +12,8 @@ Example calls to the Memre Learning Engine api can be found in MemreLearningEngi
 
 [RapidAPI sign-up](https://rapidapi.com/auth/sign-up?referral=/memre-memre-default/api/learning-engine/pricing)
 
+### 2. Use the RapidAPI key to make api calls to the Memre Learning Engine
+
 [MyUserDefaults.swift](LearningApp/MyUserDefaults.swift)
 ```swift
 class func setApiKey(_ apiKey: String) {
@@ -28,7 +30,7 @@ private static func makeApiRequest(apiPath: String,
     guard let apiKey = MyUserDefaults.getApiKey() else { return nil }
     return makeUrlRequest(url: url, httpMethod: httpMethod, apiKey: apiKey)
 }
-    
+
 private static func makeUrlRequest(url: URL,
                                    httpMethod: String,
                                    apiKey: String) -> URLRequest {
@@ -40,7 +42,7 @@ private static func makeUrlRequest(url: URL,
 }
 ```
 
-### 2. Create a Learning Engine User and store the user id to use with subsequent api calls for the user of the learning app.
+### 3. Create a Learning Engine User and store the user id to use with subsequent api calls for the user of the learning app.
 
 [EnterAPIKeyView.swift](LearningApp/screens/EnterAPIKeyView.swift)
 ```swift
@@ -88,7 +90,7 @@ static func createUser(_ apiKey: String,
 }
 ```
 
-### 3. Create a Learning Engine Item and associate the item id to each study item in the app.
+### 4. Create a Learning Engine Item and associate the item id to each study item in the app.
 
 [MemreLearningEngine.swift](LearningApp/api/MemreLearningEngine.swift)
 ```swift
@@ -149,7 +151,7 @@ private func createNewStudyItem() {
 }
 ```
 
-### 4. Post a study report whenever the user studies a learning item.
+### 5. Post a study report whenever the user studies a learning item.
 
 [StudyQuizView.swift](LearningApp/screens/StudyQuizView.swift)
 
@@ -167,7 +169,9 @@ MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
 }
 ```
 
-### 5. Use the Learning Engine recommendations to suggest which items to study.
+### 6. Use the Learning Engine recommendations to suggest which items to study.
+
+![Recommended Study Items](images/RecommendedStudyItems.png)
 
 [StudyItemsView.swift](LearningApp/screens/StudyItemsView.swift)
 ```swift
