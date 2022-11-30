@@ -4,15 +4,13 @@ Example iOS app written using SwiftUI. Demonstrates a learning app that uses the
 
 [Memre Learning Engine API Documentation](https://rapidapi.com/memre-memre-default/api/learning-engine/)
 
-Example calls to the Memre Learning Engine api can be found in MemreLearningEngine.swift.
+Example calls to the Memre Learning Engine api can be found in [MemreLearningEngine.swift](LearningApp/api/MemreLearningEngine.swift).
 
 ## Learning Engine Integration Guide:
 
-### 1. Obtain a RapidAPI key and use it when making subsequent api calls.
+1. Obtain a RapidAPI key: [RapidAPI sign-up](https://rapidapi.com/auth/sign-up?referral=/memre-memre-default/api/learning-engine/pricing)
 
-[RapidAPI sign-up](https://rapidapi.com/auth/sign-up?referral=/memre-memre-default/api/learning-engine/pricing)
-
-### 2. Use the RapidAPI key to make api calls to the Memre Learning Engine
+2. Use the RapidAPI key to make api calls to the Memre Learning Engine
 
 [MyUserDefaults.swift](LearningApp/MyUserDefaults.swift)
 ```swift
@@ -42,7 +40,7 @@ private static func makeUrlRequest(url: URL,
 }
 ```
 
-### 3. Create a Learning Engine User and store the user id to use with subsequent api calls for the user of the learning app.
+3. Create a Learning Engine User and store the user id to use with subsequent api calls for the user of the learning app.
 
 [EnterAPIKeyView.swift](LearningApp/screens/EnterAPIKeyView.swift)
 ```swift
@@ -90,7 +88,7 @@ static func createUser(_ apiKey: String,
 }
 ```
 
-### 4. Create a Learning Engine Item and associate the item id to each study item in the app.
+4. Create a Learning Engine Item and associate the item id to each study item in the app.
 
 [MemreLearningEngine.swift](LearningApp/api/MemreLearningEngine.swift)
 ```swift
@@ -151,7 +149,7 @@ private func createNewStudyItem() {
 }
 ```
 
-### 5. Post a study report whenever the user studies a learning item.
+5. Post a study report whenever the user studies a learning item.
 
 [StudyQuizView.swift](LearningApp/screens/StudyQuizView.swift)
 
@@ -169,7 +167,7 @@ MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
 }
 ```
 
-### 6. Use the Learning Engine recommendations to suggest which items to study.
+6. Use the Learning Engine recommendations to suggest which items to study.
 
 ![Recommended Study Items](images/RecommendedStudyItems.png)
 
