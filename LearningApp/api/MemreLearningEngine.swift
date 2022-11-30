@@ -182,13 +182,6 @@ class MemreLearningEngine {
         task.resume()
     }
     
-    private static func makeApiRequest(apiPath: String,
-                                       httpMethod: String) -> URLRequest? {
-        guard let url = URL(string: baseUrl + apiPath) else { return nil }
-        guard let apiKey = MyUserDefaults.getApiKey() else { return nil }
-        return makeUrlRequest(url: url, httpMethod: httpMethod, apiKey: apiKey)
-    }
-    
     private static func makeApiRequest(apiKey: String,
                                        apiPath: String,
                                        httpMethod: String,
@@ -202,6 +195,13 @@ class MemreLearningEngine {
             urlCompontents.queryItems = queryItems
         }
         guard let url = urlCompontents.url else { return nil }
+        return makeUrlRequest(url: url, httpMethod: httpMethod, apiKey: apiKey)
+    }
+    
+    private static func makeApiRequest(apiPath: String,
+                                       httpMethod: String) -> URLRequest? {
+        guard let url = URL(string: baseUrl + apiPath) else { return nil }
+        guard let apiKey = MyUserDefaults.getApiKey() else { return nil }
         return makeUrlRequest(url: url, httpMethod: httpMethod, apiKey: apiKey)
     }
     
