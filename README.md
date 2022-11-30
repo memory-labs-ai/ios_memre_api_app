@@ -12,13 +12,7 @@ Example calls to the Memre Learning Engine api can be found in [MemreLearningEng
 
 2. Use the RapidAPI key to make api calls to the Memre Learning Engine
 
-[MyUserDefaults.swift](LearningApp/MyUserDefaults.swift)
-```swift
-class func setApiKey(_ apiKey: String) {
-    UserDefaults.standard.setValue(apiKey, forKey: "apiKey")
-    UserDefaults.standard.synchronize()
-}
-```
+https://github.com/ceregousa/ios_memre_api_app/blob/ee024191b38672b6ea703b9d6927727065b1847a/LearningApp/MyUserDefaults.swift#L6-L9
 
 [MemreLearningEngine.swift](LearningApp/api/MemreLearningEngine.swift)
 ```swift
