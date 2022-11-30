@@ -14,9 +14,7 @@ Example calls to the Memre Learning Engine api can be found in [MemreLearningEng
 
 https://github.com/ceregousa/ios_memre_api_app/blob/ee024191b38672b6ea703b9d6927727065b1847a/LearningApp/MyUserDefaults.swift#L6-L9
 
-https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/api/MemreLearningEngine.swift#L185-L190
-
-https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/api/MemreLearningEngine.swift#L208-L216
+https://github.com/ceregousa/ios_memre_api_app/blob/1c7a5968b944b2d60301670a7f154b0777a036b3/LearningApp/api/MemreLearningEngine.swift#L201-L216
 
 3. Create a Learning Engine User and store the user id to use with subsequent api calls for the user of the learning app.
 
