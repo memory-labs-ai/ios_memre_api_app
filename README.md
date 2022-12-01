@@ -18,7 +18,7 @@ https://github.com/ceregousa/ios_memre_api_app/blob/1c7a5968b944b2d60301670a7f15
 
 3. Create a Learning Engine User and store the user id to use with subsequent api calls for the user of the learning app.
 
-https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/screens/EnterAPIKeyView.swift#L27-L34
+https://github.com/ceregousa/ios_memre_api_app/blob/7c18c7cc83930993ef8746f5363a17cc031d3a83/LearningApp/screens/EnterAPIKeyView.swift#L27-L29
 
 https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/api/MemreLearningEngine.swift#L10-L39
 
@@ -26,16 +26,16 @@ https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e9
 
 https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/api/MemreLearningEngine.swift#L41-L71
 
-https://github.com/ceregousa/ios_memre_api_app/blob/9261ab51c8d33c4e0a0795c7e7bf4a34898954a2/LearningApp/screens/AddStudyItemView.swift#L70-L89
+https://github.com/ceregousa/ios_memre_api_app/blob/32a492c8baddc9c9997d4beecd8dcd8c6537698d/LearningApp/screens/AddStudyItemView.swift#L72-L82
 
 5. Post a study report whenever the user studies a learning item.
 
-https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/screens/StudyQuizView.swift#L39-L48
+https://github.com/ceregousa/ios_memre_api_app/blob/3d15732fd0a490cd15c60f1176f80ad18684175b/LearningApp/screens/StudyQuizView.swift#L64-L73
 
 6. Use the Learning Engine recommendations to suggest which items to study.
 
 ![Recommended Study Items](images/RecommendedStudyItems.png)
 
-https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/screens/StudyItemsView.swift#L79-L86
+https://github.com/ceregousa/ios_memre_api_app/blob/2c62b3a7d3ec46bc00c1cf5428b200dd3cbb3785/LearningApp/screens/StudyItemsView.swift#L73-L84
 
 https://github.com/ceregousa/ios_memre_api_app/blob/9ad888c2bcfce414aa6d29c201e99f50b865c745/LearningApp/view/StudyItemCell.swift#L20-L26
