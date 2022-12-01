@@ -35,14 +35,7 @@ struct StudyQuizView: View {
                 if (didSubmitAnswer) {
                     dismiss()
                 } else {
-                    let now = Date()
-                    let studyTime = now.timeIntervalSince(startDate) * 1000
-                    let quizResult: QuizResult = (selectedAnswer == studyItem.answer) ? .Correct : .Incorrect
-                    MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
-                                                        quizResult: quizResult,
-                                                        studyTimeMillis: studyTime,
-                                                        onCompletion: onPostStudyReport,
-                                                        onError: onPostStudyReportError)
+                    sendStudyReport()
                 }
             }.font(.system(size: 20))
                 .padding()
@@ -64,8 +57,19 @@ struct StudyQuizView: View {
         }
     }
     
-    func onAnswerPressed(answer: String) {
+    private func onAnswerPressed(answer: String) {
         selectedAnswer = answer
+    }
+    
+    private func sendStudyReport() {
+        let now = Date()
+        let studyTime = now.timeIntervalSince(startDate) * 1000
+        let quizResult: QuizResult = (selectedAnswer == studyItem.answer) ? .Correct : .Incorrect
+        MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
+                                            quizResult: quizResult,
+                                            studyTimeMillis: studyTime,
+                                            onCompletion: onPostStudyReport,
+                                            onError: onPostStudyReportError)
     }
     
     private func onPostStudyReport() {
