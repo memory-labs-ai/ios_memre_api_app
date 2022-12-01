@@ -15,7 +15,7 @@ struct LearningStatsChart: View {
                 ForEach(learningStats.sorted(by: { $0.hoursFromNow < $1.hoursFromNow }), id: \.hoursFromNow) { learningStat in
                     LineMark(
                         x: .value("Hour", learningStat.hoursFromNow),
-                        y: .value("Efficiency", learningStat.effeciency)
+                        y: .value("Efficiency", learningStat.efficiency)
                     )
                 }
             }
@@ -28,7 +28,7 @@ struct LearningStatsChart: View {
                     .foregroundColor(.black)
             }
             .chartYAxisLabel(position: .trailing, alignment: .center) {
-                Text("Predicted Effeciency")
+                Text("Predicted Efficiency")
                     .font(.system(size: 16))
                     .foregroundColor(.black)
             }

@@ -174,7 +174,7 @@ class MemreLearningEngine {
                 var results: [LearningStat] = []
                 learningStats.forEach { (key: String, value: Double) in
                     results.append(LearningStat(hoursFromNow: Int(key) ?? 0,
-                                                effeciency: value))
+                                                efficiency: value))
                 }
                 onCompletion(results)
             }

@@ -3,11 +3,11 @@ import Foundation
 
 class LearningStat: NSObject {
     var hoursFromNow: Int
-    var effeciency: Double
+    var efficiency: Double
     
     init(hoursFromNow: Int,
-         effeciency: Double) {
+         efficiency: Double) {
         self.hoursFromNow = hoursFromNow
-        self.effeciency = effeciency
+        self.efficiency = efficiency
     }
 }
