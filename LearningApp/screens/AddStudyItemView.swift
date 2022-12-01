@@ -74,7 +74,6 @@ struct AddStudyItemView: View {
     }
     
     private func onAddStudyItem(learningItemId: String) {
-        loading = false
         let studyItem = StudyItem(id: UUID().uuidString,
                                   learningEngineId: learningItemId,
                                   question: question,
@@ -82,6 +81,7 @@ struct AddStudyItemView: View {
                                   distractors: parseDistractors())
         MyUserDefaults.addStudyItem(studyItem)
         onCompletion()
+        loading = false
         DispatchQueue.main.async {
             dismiss()
         }
