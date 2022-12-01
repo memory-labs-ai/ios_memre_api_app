@@ -69,23 +69,28 @@ struct AddStudyItemView: View {
     
     private func createNewStudyItem() {
         loading = true
-        MemreLearningEngine.createLearningItem(onCompletion: { learningItemId in
-            loading = false
-            MyUserDefaults.addStudyItem(StudyItem(id: UUID().uuidString,
-                                                  learningEngineId: learningItemId,
-                                                  question: question,
-                                                  answer: answer,
-                                                  distractors: parseDistractors()))
-            onCompletion()
-            DispatchQueue.main.async {
-                dismiss()
-            }
-        },
-                                            onError: { errorMessage in
-            loading = false
-            alertMessage = errorMessage
-            showingAlert = true
-        })
+        MemreLearningEngine.createLearningItem(onCompletion: onAddStudyItem,
+                                               onError: onAddStudyItemError)
+    }
+    
+    private func onAddStudyItem(learningItemId: String) {
+        loading = false
+        let studyItem = StudyItem(id: UUID().uuidString,
+                                  learningEngineId: learningItemId,
+                                  question: question,
+                                  answer: answer,
+                                  distractors: parseDistractors())
+        MyUserDefaults.addStudyItem(studyItem)
+        onCompletion()
+        DispatchQueue.main.async {
+            dismiss()
+        }
+    }
+    
+    private func onAddStudyItemError(errorMessage: String) {
+        loading = false
+        alertMessage = errorMessage
+        showingAlert = true
     }
 }
 

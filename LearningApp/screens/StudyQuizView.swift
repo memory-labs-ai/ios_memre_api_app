@@ -40,12 +40,9 @@ struct StudyQuizView: View {
                     let quizResult: QuizResult = (selectedAnswer == studyItem.answer) ? .Correct : .Incorrect
                     MemreLearningEngine.postStudyReport(itemId: studyItem.learningEngineId,
                                                         quizResult: quizResult,
-                                                        studyTimeMillis: studyTime) {
-                        didSubmitAnswer = true
-                    } onError: { errorMessage in
-                        alertMessage = errorMessage
-                        showingAlert = true
-                    }
+                                                        studyTimeMillis: studyTime,
+                                                        onCompletion: onPostStudyReport,
+                                                        onError: onPostStudyReportError)
                 }
             }.font(.system(size: 20))
                 .padding()
@@ -69,6 +66,15 @@ struct StudyQuizView: View {
     
     func onAnswerPressed(answer: String) {
         selectedAnswer = answer
+    }
+    
+    private func onPostStudyReport() {
+        didSubmitAnswer = true
+    }
+    
+    private func onPostStudyReportError(errorMessage: String) {
+        alertMessage = errorMessage
+        showingAlert = true
     }
 }
 

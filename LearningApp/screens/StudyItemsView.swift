@@ -7,7 +7,6 @@ struct StudyItemsView: View {
     @State private var recommendedStudyItemIds: [String] = []
     @State private var loading = false
     @State private var showAddStudyItemView = false
-    @State private var showLearningStatsView = false
     @State private var showingAlert = false
     @State private var alertMessage : String = ""
     
@@ -52,7 +51,6 @@ struct StudyItemsView: View {
         .navigationTitle("Study Items")
         .navigationBarItems(trailing: StatsBarButton())
         .onAppear {
-            showLearningStatsView = false
             showAddStudyItemView = false
             reloadAll()
         }

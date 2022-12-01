@@ -25,13 +25,8 @@ struct EnterAPIKeyView: View {
             VStack {
                 Button("Create new user") {
                     MemreLearningEngine.createUser(apiKeyTextEntry,
-                                                   onCompletion: {
-                        isShowingStudyItemsView = true
-                    },
-                                                   onError: { errorMessage in
-                        alertMessage = errorMessage
-                        showingAlert = true
-                    })
+                                                   onCompletion: onCreateUserCompletion,
+                                                   onError: onCreateUserError)
                 }.font(.system(size: 20))
                     .padding()
                     .background(Color.memreRed)
@@ -75,6 +70,15 @@ struct EnterAPIKeyView: View {
                 }
             }
         }
+    }
+    
+    private func onCreateUserCompletion() {
+        isShowingStudyItemsView = true
+    }
+    
+    private func onCreateUserError(errorMessage: String) {
+        alertMessage = errorMessage
+        showingAlert = true
     }
 }
 
