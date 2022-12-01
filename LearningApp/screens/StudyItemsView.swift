@@ -75,12 +75,17 @@ struct StudyItemsView: View {
     }
     
     private func reloadRecommendedStudyItems() {
-        MemreLearningEngine.getRecommendedStudyItems { studyItemIds in
-            self.recommendedStudyItemIds = studyItemIds
-        } onError: { errorMessage in
-            showingAlert = true
-            alertMessage = errorMessage
-        }
+        MemreLearningEngine.getRecommendedStudyItems(onCompletion: onGetRecommendedStudyItems,
+                                                     onError: onGetRecommendedStudyItemsError)
+    }
+    
+    private func onGetRecommendedStudyItems(studyItemIds: [String]) {
+        self.recommendedStudyItemIds = studyItemIds
+    }
+
+    private func onGetRecommendedStudyItemsError(errorMessage: String) {
+        alertMessage = errorMessage
+        showingAlert = true
     }
     
     private func deleteStudyItem(at offsets: IndexSet) {
