@@ -6,6 +6,8 @@ Example iOS app written using SwiftUI. Demonstrates a learning app that uses the
 
 Example calls to the Memre Learning Engine api can be found in [MemreLearningEngine.swift](LearningApp/api/MemreLearningEngine.swift).
 
+![Walk Through](images/WalkThrough.gif)
+
 ## Learning Engine Integration Guide:
 
 1. Obtain a RapidAPI key: [RapidAPI sign-up](https://rapidapi.com/auth/sign-up?referral=/memre-memre-default/api/learning-engine/pricing)
