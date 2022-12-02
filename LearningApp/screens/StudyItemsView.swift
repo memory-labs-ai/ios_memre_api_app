@@ -18,7 +18,7 @@ struct StudyItemsView: View {
                            isActive: $showAddStudyItemView) {
                 EmptyView()
             }
-            Color.memreLightGrey.ignoresSafeArea()
+            Color.lightGrey.ignoresSafeArea()
             List() {
                 ForEach(studyItems, id: \.id) { studyItem in
                     StudyItemCell(studyItem: studyItem,
@@ -35,7 +35,7 @@ struct StudyItemsView: View {
                     .scaledToFill()
                     .foregroundColor(.white)
                     .frame(width: 60, height: 60)
-                    .background(Color.memreRed)
+                    .background(Color.primaryRed)
                     .clipShape(Circle())
                     .padding(.trailing, 30)
             }

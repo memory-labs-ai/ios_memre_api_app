@@ -33,14 +33,14 @@ struct AddStudyItemView: View {
                     dismiss()
                 }.font(.system(size: 20))
                     .padding()
-                    .background(Color.memreRed)
+                    .background(Color.primaryRed)
                     .foregroundColor(.white)
                     .cornerRadius(5)
                 Button("Create Study Item") {
                     createNewStudyItem()
                 }.font(.system(size: 20))
                     .padding()
-                    .background(Color.memreRed)
+                    .background(Color.primaryRed)
                     .foregroundColor(.white)
                     .cornerRadius(5)
                 .alert(isPresented: $showingAlert) {
@@ -60,7 +60,7 @@ struct AddStudyItemView: View {
             }
         }
         .navigationTitle("Add Study Item")
-        .background(Color.memreLightGrey)
+        .background(Color.lightGrey)
     }
     
     private func parseDistractors() -> [String] {

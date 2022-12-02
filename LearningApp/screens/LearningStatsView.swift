@@ -14,7 +14,7 @@ struct LearningStatsView: View {
                 .padding(.trailing, 20)
             Spacer()
         }.navigationTitle("Learning Stats")
-            .background(Color.memreLightGrey)
+            .background(Color.lightGrey)
     }
 }
 

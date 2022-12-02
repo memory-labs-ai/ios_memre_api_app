@@ -39,11 +39,11 @@ struct StudyQuizView: View {
                 }
             }.font(.system(size: 20))
                 .padding()
-                .background(Color.memreRed)
+                .background(Color.primaryRed)
                 .foregroundColor(.white)
                 .cornerRadius(5)
         }
-        .background(Color.memreLightGrey)
+        .background(Color.lightGrey)
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Oops"),
                   message: Text(alertMessage),

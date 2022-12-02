@@ -4,14 +4,14 @@ import SwiftUI
 struct RootNavigation: View {
     
     init() {
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.memreRed]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.primaryRed]
     }
     
     var body: some View {
         NavigationStack {
             EnterAPIKeyView()
         }
-        .accentColor(Color.memreRed)
+        .accentColor(Color.primaryRed)
     }
 }
 
