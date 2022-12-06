@@ -14,30 +14,30 @@ Example calls to the Memre Learning Engine api can be found in [MemreLearningEng
 
 2. Use the RapidAPI key to make api calls to the Memre Learning Engine
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/MyUserDefaults.swift#L6-L9
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/MyUserDefaults.swift#L6-L9
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/api/MemreLearningEngine.swift#L201-L216
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/api/MemreLearningEngine.swift#L201-L216
 
 3. Create a Learning Engine User and store the user id to use with subsequent api calls for the user of the learning app.
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/screens/EnterAPIKeyView.swift#L27-L29
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/screens/EnterAPIKeyView.swift#L27-L29
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/api/MemreLearningEngine.swift#L10-L39
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/api/MemreLearningEngine.swift#L10-L39
 
 4. Create a Learning Engine Item and associate the item id to each study item in the app.
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/api/MemreLearningEngine.swift#L41-L71
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/api/MemreLearningEngine.swift#L41-L71
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/screens/AddStudyItemView.swift#L72-L82
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/screens/AddStudyItemView.swift#L72-L82
 
 5. Post a study report whenever the user studies a learning item.
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/screens/StudyQuizView.swift#L64-L73
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/screens/StudyQuizView.swift#L64-L73
 
 6. Use the Learning Engine recommendations to suggest which items to study.
 
 ![Recommended Study Items](images/RecommendedStudyItems.png)
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/screens/StudyItemsView.swift#L73-L84
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/screens/StudyItemsView.swift#L73-L84
 
-https://github.com/memre-ai/ios_memre_api_app/blob/4ff528923522e1be99bbf92be0377034306a0466/LearningApp/view/StudyItemCell.swift#L20-L26
+https://github.com/memre-ai/ios_memre_api_app/blob/29b70d21466258a7495db80e1dd02af391a38313/LearningApp/view/StudyItemCell.swift#L20-L26
